@@ -5,10 +5,12 @@ jobs:
       - image: circleci/node:12
     steps:
       - checkout
-      - run: echo "Build job"
-      #   name: NPM install
-      #   command: npm install --save
-      # - run: npm run build
+      - run: 
+        name: NPM install
+        command: npm install --save
+      - run: 
+        name: Npm build
+        command: npm run build
   # test:
   #   docker:
   #     - image: circleci/node:12
