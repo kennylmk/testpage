@@ -7,6 +7,7 @@ jobs:
       - checkout
       - run: npm install --save
       - run: npm install browserify
+      - run: mkdir dist
       - run:  npm run build
   # test:
   #   docker:
