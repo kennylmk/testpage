@@ -8,9 +8,9 @@ jobs:
       - run: 
         name: NPM install
         command: npm install --save
-      - run: 
-        name: Npm build
-        command: npm run build
+      # - run: 
+      #   name: Npm build
+      #   command: npm run build
   # test:
   #   docker:
   #     - image: circleci/node:12
