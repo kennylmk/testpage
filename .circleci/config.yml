@@ -21,7 +21,7 @@ jobs:
       - run: npm install --save chai
       - run: npm install --save lodash
       - run: npm install --save selenium-webdriver
-      - run: sudo apt-get install libxss1
+      - run: sudo apt install libnss3-dev
       - run: npm run test 
   # deploy:
   #   docker:
