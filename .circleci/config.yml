@@ -16,7 +16,9 @@ jobs:
       - checkout
       - run: npm install --save
       - run: npm install --save puppeteer
-      - run: npm run test
+      - run: npm install --save chai
+      - run: npm install --save lodash
+      - run: npm run test 
   # deploy:
   #   docker:
   #     - image: circleci/node:7.10
