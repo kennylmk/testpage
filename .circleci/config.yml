@@ -9,17 +9,13 @@ jobs:
       - run: npm install browserify
       - run: mkdir dist
       - run:  npm run build
-  # test:
-  #   docker:
-  #     - image: circleci/node:12
-  #   steps:
-  #     - checkout
-  #     - run: 
-  #       name: NPM install
-  #       command: npm install --save
-  #     - run:
-  #       name: Run test
-  #       command: npm run test
+  test:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - run: npm install --save
+      - run: npm run test
   # deploy:
   #   docker:
   #     - image: circleci/node:7.10
