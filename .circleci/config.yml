@@ -22,6 +22,7 @@ jobs:
       - run: npm install --save lodash
       - run: npm install --save selenium-webdriver
       - run: sudo apt install libnss3-dev
+      - run: sudo apt-get install libatk-bridge2.0-0
       - run: npm run test 
   # deploy:
   #   docker:
