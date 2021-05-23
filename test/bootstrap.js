@@ -19,9 +19,9 @@ before (async function () {
 });
 
 // close browser and reset global variables
-// after (function () {
-//   browser.close();
+after (function () {
+  browser.close();
 
-//   global.browser = globalVariables.browser;
-//   global.expect = globalVariables.expect;
-// });
+  global.browser = globalVariables.browser;
+  global.expect = globalVariables.expect;
+});

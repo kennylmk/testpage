@@ -15,6 +15,7 @@ jobs:
     steps:
       - checkout
       - run: npm install --save
+      - run: npm install --save puppeteer
       - run: npm run test
   # deploy:
   #   docker:
