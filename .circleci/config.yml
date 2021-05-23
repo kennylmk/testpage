@@ -5,9 +5,7 @@ jobs:
       - image: circleci/node:12
     steps:
       - checkout
-      - run: 
-        name: NPM install
-        command: npm install --save
+      - run: npm install --save
       # - run: 
       #   name: Npm build
       #   command: npm run build
