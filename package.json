@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test/test.js --timeout 0",
+    "test": "mocha test/test.js --timeout 0 --exit",
     "build": "browserify app.js > dist/bundle.js",
     "start": "node app.js"
   },

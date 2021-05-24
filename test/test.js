@@ -30,7 +30,7 @@ describe('UI test',()=>{
     before (async ()=> {
         // global.expect = expect;
         // global.browser = await puppeteer.launch(opts);
-        browser = await puppeteer.launch({headless: false}) // with visual
+        browser = await puppeteer.launch(opts) // with visual
         page = await browser.newPage();
         await page.goto('http://localhost:8083');
 
@@ -39,9 +39,9 @@ describe('UI test',()=>{
     // close browser and reset global variables
     after (async ()=> {
         await browser.close().promise;
-        page.waitFor(100);
-        process.exit(0);
-        // browser.quit();
+        browser.close();
+        // page.waitFor(100);
+        // process.exit(0);
         // global.browser = globalVariables.browser;
         // global.expect = globalVariables.expect;
     });
@@ -50,8 +50,7 @@ describe('UI test',()=>{
         // page = await browser.newPage();
         // await page.goto('http://localhost:8083');
         await page.click("button").promise;
-        // await browser.close().promise;
-        // process.exit(0)
+
         // const clickResult=await page.evaluate(()=>{
         //     document.querySelector('button[id=btn1]').click();
         // })
@@ -66,19 +65,24 @@ describe('UI test',()=>{
 
         // expect(result).to.eql('Hello World for CircleCI');
         // console.log('result:'+result);
+
         // result.should.equal('Hello World for CircleCI');
 
     });
 
-    // it('test to disply text',async()=>{
+    it('test to disply text',async()=>{
     //     await page.waitFor('p');
     //     result= await page.evaluate(()=>{
     //         document.querySelector('p[id=result]').innerHTML;
 
     //     });
     //     console.log('result:'+result)
+        await page.waitFor('p');
+        result = await page.$eval('p', result => result.innerText);
+        console.log('result:'+result);
+        expect(result).to.eql('Hello World for CircleCI');
 
-    // });
+    });
 
 
     
