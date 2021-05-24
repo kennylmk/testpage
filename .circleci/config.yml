@@ -14,7 +14,7 @@ jobs:
       - image: circleci/node:12
     steps:
       - checkout
-      - run: npm install -g
+      - run: sudo npm install -g
       - run: npm install --save chrome
       - run: npm install --save mocha
       - run: npm install --save puppeteer
