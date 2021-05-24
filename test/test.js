@@ -1,18 +1,12 @@
-const { Builder, By } = require("selenium-webdriver");
+// const { Builder, By } = require("selenium-webdriver");
 const assert = require("assert");
 const { expect } = require('chai');
-const browserify = require("browserify");
+// const browserify = require("browserify");
 const puppeteer = require('puppeteer');
-var app = require('../app')
-const _ = require('lodash');
-const globalVariables = _.pick(global, ['browser', 'expect']);
-// const { start } = require("repl");
-// const app = require('../app').server;
+// const _ = require('lodash');
+// const globalVariables = _.pick(global, ['browser', 'expect']);
+const app = require('../app');
 
-// const document = require('../index.html')
-let server;
-
-let driver;
 
 describe('UI test',()=>{
    

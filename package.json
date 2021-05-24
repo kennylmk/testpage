@@ -24,7 +24,6 @@
   "dependencies": {
     "browserify": "^17.0.0",
     "chai": "^4.3.4",
-    "geckodriver": "^2.0.0",
     "lodash": "^4.17.21",
     "mochawesome": "^4.1.0",
     "puppeteer": "^9.1.1"
