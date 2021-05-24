@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run: sudo npm install -g
-      - run: sudo npm install --save chrome
+      # - run: sudo npm install --save chrome
       - run: sudo npm install --save mocha
       - run: sudo npm install --save puppeteer
       - run: sudo npm install --save chai
