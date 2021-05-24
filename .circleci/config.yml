@@ -17,7 +17,7 @@ jobs:
       - run: sudo npm install -g
       - run: npm install --save chrome
       - run: npm install --save mocha
-      - run: npm install --save puppeteer
+      - run: sudo npm install --save puppeteer
       - run: npm install --save chai
       # - run: npm install --save lodash
       - run: npm install --save selenium-webdriver
