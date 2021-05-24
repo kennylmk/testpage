@@ -13,82 +13,104 @@ let server;
 
 let driver;
 
-describe('test',()=>{
+// describe('test',()=>{
    
-    // before (async function () {
-    // before (async function () {
-    //     global.expect = expect;
-    //     global.browser = await puppeteer.launch(opts);
-    //     let page=await browser.newPage();
-    //     await page.goto('http://localhost:8083')
-    // });
+//     // before (async function () {
+//     // before (async function () {
+//     //     global.expect = expect;
+//     //     global.browser = await puppeteer.launch(opts);
+//     //     let page=await browser.newPage();
+//     //     await page.goto('http://localhost:8083')
+//     // });
 
-    // });
-    let page;
-    let result;
+//     // });
+//     let page;
+//     let result;
 
-    // it('test browser navigation', async()=>{
-    //     page = await browser.newPage();
-    //     await page.goto('http://localhost:8083');
-    //     document.querySelector('button[id=btn1]').click();
-    // });
-    // // it('test button click', async()=>{
-    // //     document.querySelector('button[id=btn1]').click();
-    // // });
-    // it('test display text', async()=>{
-    //     result=await page.evaluate(()=>{
-    //         document.querySelector('p[id=result]').innerHTML;
-    //     });
-    //     asserttest.equal(result,'Hello World for CircleCI')
-    //     console.log('result:'+result);
-    // });
-    const asset = require('assert')
-    it('test to click button', async()=>{
-        console.log("BROWSER VERSION")
-        console.log(await browser.version());
-        expect(true).to.be.true;
-        page = await browser.newPage();
-        await page.goto('http://localhost:8083');
-        await page.click("button").promise;
-        
-        // const clickResult=await page.evaluate(()=>{
-        //     document.querySelector('button[id=btn1]').click();
-        //     // result = document.querySelector('p[id=result]').innerHTML;
-        // })
-        // console.log('clickResult:'+clickResult)
-        // await page.waitFor('p');
-        // result= await page.evaluate(()=>{
-        //     document.querySelector('p[id=result]').innetText;
+//     // it('test browser navigation', async()=>{
+//     //     page = await browser.newPage();
+//     //     await page.goto('http://localhost:8083');
+//     //     document.querySelector('button[id=btn1]').click();
+//     // });
+//     // // it('test button click', async()=>{
+//     // //     document.querySelector('button[id=btn1]').click();
+//     // // });
+//     // it('test display text', async()=>{
+//     //     result=await page.evaluate(()=>{
+//     //         document.querySelector('p[id=result]').innerHTML;
+//     //     });
+//     //     asserttest.equal(result,'Hello World for CircleCI')
+//     //     console.log('result:'+result);
+//     // });
 
-        // }).promise;
-        // await page.waitFor('p');
-        // result = await page.$eval('p', result => result.innerText);
-        // // const headlines = await page.$$('h1')
-
-        // expect(result).to.eql('Hello World for CircleCI');
-        // console.log('result:'+result);
-    });
-
-    // it('test to disply text',async()=>{
-    //     await page.waitFor('p');
-    //     result= await page.evaluate(()=>{
-    //         document.querySelector('p[id=result]').innerHTML;
-
-    //     });
-    //     console.log('result:'+result)
-
-    // });
+//     // puppeteer options
+//     const opts = {
+//         headless: true,
+//         slowMo: 100,
+//         timeout: 10000
+//     };
+  
+//     // expose variables
+//     before (async function () {
+//         global.expect = expect;
+//         global.browser = await puppeteer.launch(opts);
+//     });
     
-})
-// const asset = require('assert')
-// var displayText = require("../main.js")
+//     // close browser and reset global variables
+//     after (function () {
+//         browser.close();
+    
+//         global.browser = globalVariables.browser;
+//         global.expect = globalVariables.expect;
+//     });
 
-// describe('test', function() {
-//     it('Test display text', function() {
-//         var result=displayText.displayText();
-//         var msg = "Hello World for CircleCI";
-//         asset.equal(result,'Hello World for CircleCI')
-//     })
-//   })
+//     const asset = require('assert')
+//     it('test to click button', async()=>{
+//         console.log("BROWSER VERSION")
+//         console.log(await browser.version());
+//         expect(true).to.be.true;
+//         page = await browser.newPage();
+//         await page.goto('http://localhost:8083');
+//         await page.click("button").promise;
+        
+//         // const clickResult=await page.evaluate(()=>{
+//         //     document.querySelector('button[id=btn1]').click();
+//         //     // result = document.querySelector('p[id=result]').innerHTML;
+//         // })
+//         // console.log('clickResult:'+clickResult)
+//         // await page.waitFor('p');
+//         // result= await page.evaluate(()=>{
+//         //     document.querySelector('p[id=result]').innetText;
+
+//         // }).promise;
+//         // await page.waitFor('p');
+//         // result = await page.$eval('p', result => result.innerText);
+//         // // const headlines = await page.$$('h1')
+
+//         // expect(result).to.eql('Hello World for CircleCI');
+//         // console.log('result:'+result);
+//     });
+
+//     // it('test to disply text',async()=>{
+//     //     await page.waitFor('p');
+//     //     result= await page.evaluate(()=>{
+//     //         document.querySelector('p[id=result]').innerHTML;
+
+//     //     });
+//     //     console.log('result:'+result)
+
+//     // });
+    
+// })
+const asset = require('assert')
+var displayText = require("../main.js")
+
+describe('test', function() {
+    it('Test display text', function() {
+        var result=displayText.displayText();
+        var msg = "Hello World for CircleCI";
+        asset.equal(result,'Hello World for CircleCI')
+    })
+  })
 
 
