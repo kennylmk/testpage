@@ -4,7 +4,6 @@ const { expect } = require('chai');
 const browserify = require("browserify");
 const puppeteer = require('puppeteer');
 const _ = require('lodash');
-const asserttest  = require("assert");
 const globalVariables = _.pick(global, ['browser', 'expect']);
 // const { start } = require("repl");
 // const app = require('../app').server;
@@ -67,8 +66,7 @@ describe('test',()=>{
         // const headlines = await page.$$('h1')
 
         expect(result).to.eql('Hello World for CircleCI');
-        console.log('result:'+result)
-
+        console.log('result:'+result);
     });
 
     // it('test to disply text',async()=>{
