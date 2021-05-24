@@ -15,13 +15,13 @@ jobs:
     steps:
       - checkout
       - run: sudo npm install -g
-      - run: npm install --save chrome
-      - run: npm install --save mocha
+      - run: sudo npm install --save chrome
+      - run: sudo npm install --save mocha
       - run: sudo npm install --save puppeteer
-      - run: npm install --save chai
+      - run: sudo npm install --save chai
       # - run: npm install --save lodash
-      - run: npm install --save selenium-webdriver
-      - run: npm install -save chromium
+      - run: sudo npm install --save selenium-webdriver
+      - run: sudo npm install -save chromium
       # - run: sudo apt install libnss3-dev
       # - run: sudo apt-get install libatk-bridge2.0-0
       # - run: sudo apt-get install libxkbcommon-x11-0
