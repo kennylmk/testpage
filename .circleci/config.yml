@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock" }}
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       # - run: npm ci
       - run: npm install --save
       # - run: npm install browserify
@@ -21,7 +21,7 @@ jobs:
       - run: sudo apt install libgtk-3-0
       - run: sudo apt-get install libasound2
       - save_cache:
-          key: dependency-cache-{{ checksum "package-lock" }}
+          key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules 
   test:
@@ -30,7 +30,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock" }}
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       # - run: sudo npm install -g
       # - run: sudo npm install --save mocha
       # - run: sudo npm install --save puppeteer
