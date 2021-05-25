@@ -53,6 +53,7 @@ workflows:
   #           - build # wait for build job to complete successfully
   heroku_deploy:
     jobs:
+      - sudo npm install -g
       - heroku/deploy-via-git
       # requires:
       #   - build
