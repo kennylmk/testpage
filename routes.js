@@ -3,8 +3,8 @@ const todos = require("./todos");
 
 const router = express.Router();
 
-router.get("/todos", function(req, res) {
-  res.json(todos);
+router.get("/", function(req, res) {
+    res.redirect('/index.html')
 });
 
 module.exports = router;
