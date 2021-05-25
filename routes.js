@@ -1,10 +1,10 @@
 const express = require('express');
-const todos = require("./todos");
+const path = require('path');
 
 const router = express.Router();
 
 router.get("/", function(req, res) {
-    res.redirect('/index.html')
+    res.sendFile(path.join(__dirname,'/index.html'));
 });
 
 module.exports = router;
