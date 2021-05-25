@@ -20,6 +20,7 @@ jobs:
       - run: sudo apt-get install -y libgbm-dev
       - run: sudo apt install libgtk-3-0
       - run: sudo apt-get install libasound2
+      - run: sudo apt install libnss
       - save_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
