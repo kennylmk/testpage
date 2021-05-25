@@ -5,7 +5,7 @@ const { expect } = require('chai');
 const puppeteer = require('puppeteer');
 // const _ = require('lodash');
 // const globalVariables = _.pick(global, ['browser', 'expect']);
-const app = require('../app');
+const app = require('../server');
 
 
 describe('UI test',()=>{
@@ -26,7 +26,7 @@ describe('UI test',()=>{
         // global.browser = await puppeteer.launch(opts);
         browser = await puppeteer.launch(opts) // with visual
         page = await browser.newPage();
-        await page.goto('http://localhost:8083');
+        await page.goto('http://localhost:1337');
 
     });
     
