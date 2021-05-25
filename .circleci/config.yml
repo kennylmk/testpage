@@ -32,10 +32,10 @@ jobs:
 orbs:
   heroku: circleci/heroku@0.0.10
 workflows:
-  version: 2
+  version: 2.1
   build_and_test:
     jobs:
-      # - build
+      - build
       - test:
           requires:
             - build
