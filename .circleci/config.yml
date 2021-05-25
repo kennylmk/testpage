@@ -35,10 +35,10 @@ workflows:
   version: 2.1
   build_and_test:
     jobs:
-  #     # - build
+      - build
       - test
-          requires:
-            - build # wait for build job to complete successfully
+          # requires:
+          #   - build
   heroku_deploy:
     jobs:
       - heroku/deploy-via-git
