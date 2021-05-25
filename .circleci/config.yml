@@ -38,14 +38,22 @@ jobs:
   #       name: NPM install
   #       command: |
   #         npm install --save
-
+      # - run: aws s3 sync ./dist s3://
+# 0b6c3342-1182-4ae1-b9a2-db85509e4d9d
+# circleci-sandbox
+orbs:
+  heroku: circleci/heroku@0.0.10
 workflows:
   version: 2.1
   build_and_test:
     jobs:
-      - build
+      # - build
       - test
-      # - deploy:
-      #     requires:
-      #       - build
-      #       - test
+          requires:
+            - build # wait for build job to complete successfully
+  heroku_deploy:
+    jobs:
+      - heroku/deploy-via-git
+      # requires:
+      #   - build
+      #   - test
