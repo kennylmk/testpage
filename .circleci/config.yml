@@ -6,9 +6,8 @@ jobs:
     steps:
       - checkout
       - run: npm install --save
-      - run: npm install browserify
-      - run: mkdir dist
-      - run:  npm run build
+      # - run: npm install browserify
+      # - run:  npm run build
   test:
     docker:
       - image: circleci/node:12
@@ -29,28 +28,17 @@ jobs:
       - run: sudo apt install libgtk-3-0
       - run: sudo apt-get install libasound2
       - run: npm run test 
-  # deploy:
-  #   docker:
-  #     - image: circleci/node:7.10
-  #   steps:
-  #     - checkout
-  #     - run: 
-  #       name: NPM install
-  #       command: |
-  #         npm install --save
-      # - run: aws s3 sync ./dist s3://
-# 0b6c3342-1182-4ae1-b9a2-db85509e4d9d
-# circleci-sandbox
+
 orbs:
   heroku: circleci/heroku@0.0.10
 workflows:
   version: 2.1
-  # build_and_test:
-  #   jobs:
+  build_and_test:
+    jobs:
   #     # - build
-  #     - test
-  #         requires:
-  #           - build # wait for build job to complete successfully
+      - test
+          requires:
+            - build # wait for build job to complete successfully
   heroku_deploy:
     jobs:
       - heroku/deploy-via-git
