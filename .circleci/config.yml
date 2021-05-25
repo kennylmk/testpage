@@ -5,29 +5,46 @@ jobs:
       - image: circleci/node:12
     steps:
       - checkout
-      - run: npm ci
-      # - run: npm install --save
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.lock" }}
+      # - run: npm ci
+      - run: npm install --save
       # - run: npm install browserify
       # - run:  npm run build
-  test:
-    docker:
-      - image: circleci/node:12
-    steps:
-      - checkout
       - run: sudo npm install -g
-      # - run: sudo npm install --save chrome
       - run: sudo npm install --save mocha
       - run: sudo npm install --save puppeteer
-      # - run: sudo npm install --save chai
-      # - run: npm install --save lodash
-      # - run: sudo npm install --save selenium-webdriver
-      # - run: sudo npm install -save chromium
       - run: sudo apt install libnss3-dev
       - run: sudo apt-get install libatk-bridge2.0-0
       - run: sudo apt-get install libxkbcommon-x11-0
       - run: sudo apt-get install -y libgbm-dev
       - run: sudo apt install libgtk-3-0
       - run: sudo apt-get install libasound2
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.lock" }}
+          paths:
+            - ./node_modules 
+  test:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.lock" }}
+      # - run: sudo npm install -g
+      # - run: sudo npm install --save mocha
+      # - run: sudo npm install --save puppeteer
+      # - run: sudo apt install libnss3-dev
+      # - run: sudo apt-get install libatk-bridge2.0-0
+      # - run: sudo apt-get install libxkbcommon-x11-0
+      # - run: sudo apt-get install -y libgbm-dev
+      # - run: sudo apt install libgtk-3-0
+      # - run: sudo apt-get install libasound2
+      # # - run: sudo npm install --save chrome
+      # # - run: sudo npm install --save chai
+      # # - run: npm install --save lodash
+      # # - run: sudo npm install --save selenium-webdriver
+      # # - run: sudo npm install -save chromium
       - run: npm run test 
 
 orbs:
