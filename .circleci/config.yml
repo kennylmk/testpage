@@ -66,8 +66,10 @@ workflows:
   heroku_deploy:
     jobs:
       - build
-      # - test
+      - test:
+        requires:
+          - build
       - heroku/deploy-via-git:
           requires:
-            - build
+            - test
             # - test
