@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
 });
 
 
-app.use('/', routes);
+app.use('/', route);
 
 // Server
 app.listen(port, () => console.log(`Server running on localhost:${port}`));
