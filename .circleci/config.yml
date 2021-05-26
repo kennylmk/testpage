@@ -14,7 +14,7 @@ jobs:
       - run: sudo npm install -g
       - run: sudo npm install --save mocha
       - run: sudo npm install --save puppeteer
-      - run: npm run test
+      - run: npm run build
       # - run: sudo npm install --save selenium-webdriver
 
       # - run: sudo npm install --save chromium
