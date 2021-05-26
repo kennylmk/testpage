@@ -14,7 +14,9 @@ jobs:
       - run: sudo npm install -g
       - run: sudo npm install --save mocha
       - run: sudo npm install --save puppeteer
-      - run: ls
+      - run: |
+          mkdir dist    
+          ls
       - run: npm run build
       # - run: sudo npm install --save selenium-webdriver
 
