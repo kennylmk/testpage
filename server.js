@@ -1,5 +1,6 @@
 const express = require("express");
-const routes = require("./routes");
+// const routes = require("./routes");
+const path = require('path');
 
 // App
 const app = express();
@@ -7,6 +8,13 @@ const app = express();
 // Set port
 const port = process.env.PORT || "1337";
 app.set("port", port);
+
+const router = express.Router();
+
+router.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname,'/index.html'));
+});
+
 
 app.use('/', routes);
 
